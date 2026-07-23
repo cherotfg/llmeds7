@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Required for correct iframe sizing — AEM section margins inflate shadow body */
+main > div,
+main > .section,
+main > .section:first-of-type {
+  margin: 0;
+}
+main > .section > div {
+  max-width: none;
+  padding: 0;
+}
+body {
+  overflow: auto;
+}
+
+main .list-devices {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  padding: 8px;
+  max-width: 780px;
+}
+
+main .list-devices .list-devices-wrapper {
+  position: relative;
+}
+
+main .list-devices .list-devices-track {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 2px;
+}
+
+main .list-devices .list-devices-track::-webkit-scrollbar {
+  display: none;
+}
+
+main .list-devices .list-devices-card {
+  flex: 0 0 220px;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: start;
+  box-sizing: border-box;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+main .list-devices .list-devices-image {
+  flex: 6;
+  background: #fff;
+  overflow: hidden;
+}
+
+main .list-devices .list-devices-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+main .list-devices .list-devices-info {
+  flex: 4;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+}
+
+main .list-devices .list-devices-badge {
+  align-self: flex-start;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+main .list-devices .list-devices-name {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+main .list-devices .list-devices-desc {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.3;
+  opacity: 0.78;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+main .list-devices .list-devices-price {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+main .list-devices .list-devices-cta {
+  margin-top: 6px;
+  width: 100%;
+  border: none;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+main .list-devices .list-devices-cta:hover {
+  opacity: 0.88;
+}
+
+main .list-devices .list-devices-fade {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 60px;
+  pointer-events: none;
+  border-radius: 0 10px 10px 0;
+}
+
+main .list-devices .list-devices-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  display: flex;
+}
+
+main .list-devices .list-devices-arrow-left {
+  left: 4px;
+}
+
+main .list-devices .list-devices-arrow-right {
+  right: 4px;
+}
+
+main .list-devices .list-devices-arrow:focus-visible {
+  outline: 2px solid #ff9e1b;
+  outline-offset: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+  main .list-devices { background: #111; }
+  main .list-devices .list-devices-image { background: #f2f2f2; }
+}
+body.dark main .list-devices { background: #111; }
+body.dark main .list-devices .list-devices-image { background: #f2f2f2; }
