@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Required for correct iframe sizing — AEM section margins inflate shadow body */
+main > div,
+main > .section,
+main > .section:first-of-type {
+  margin: 0;
+}
+main > .section > div {
+  max-width: none;
+  padding: 0;
+}
+body {
+  overflow: auto;
+}
+
+main .list-broadband-plans {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  padding: 8px;
+  max-width: 780px;
+}
+
+main .list-broadband-plans .lbp-wrapper {
+  position: relative;
+}
+
+main .list-broadband-plans .lbp-track {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 2px;
+}
+
+main .list-broadband-plans .lbp-track::-webkit-scrollbar {
+  display: none;
+}
+
+main .list-broadband-plans .lbp-card {
+  flex: 0 0 210px;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: start;
+  box-sizing: border-box;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+main .list-broadband-plans .lbp-image {
+  flex: 6;
+  width: 100%;
+  overflow: hidden;
+}
+
+main .list-broadband-plans .lbp-info {
+  flex: 4;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-height: 0;
+}
+
+main .list-broadband-plans .lbp-badge {
+  align-self: flex-start;
+  background: rgba(255, 158, 27, 0.16);
+  color: #ff9e1b;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+main .list-broadband-plans .lbp-name {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+main .list-broadband-plans .lbp-desc {
+  margin: 0;
+  font-size: 10.5px;
+  line-height: 1.35;
+  opacity: 0.78;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+main .list-broadband-plans .lbp-price {
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: auto;
+}
+
+main .list-broadband-plans .lbp-cta {
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  background: #ff9e1b;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 0;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  font-family: inherit;
+}
+
+main .list-broadband-plans .lbp-cta:hover {
+  opacity: 0.88;
+}
+
+main .list-broadband-plans .lbp-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  display: flex;
+}
+
+main .list-broadband-plans .lbp-arrow-left {
+  left: 4px;
+}
+
+main .list-broadband-plans .lbp-arrow-right {
+  right: 4px;
+}
+
+main .list-broadband-plans .lbp-arrow:focus-visible {
+  outline: 2px solid #ff9e1b;
+  outline-offset: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+  main .list-broadband-plans { background: #111; }
+}
+body.dark main .list-broadband-plans { background: #111; }
